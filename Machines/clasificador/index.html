@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Clasificador de Imágenes</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- CABECERA -->
+    <header>
+        <div class="container">
+
+            <h1>Clasificador de Imágenes</h1>
+
+            <p>
+                Clasifica imágenes utilizando un modelo entrenado
+                con Teachable Machine y TensorFlow.js.
+            </p>
+
+        </div>
+    </header>
+
+
+    <!-- CONTENIDO -->
+    <main class="container">
+
+        <!-- CLASIFICADOR -->
+        <section class="card">
+
+            <h2>Clasificador</h2>
+
+            <p id="estado">
+                El modelo todavía no está iniciado.
+            </p>
+
+
+            <!-- BOTONES -->
+            <div class="buttons">
+
+                <button
+                    id="btnIniciar"
+                    type="button">
+                    Iniciar
+                </button>
+
+                <button
+                    id="btnParar"
+                    type="button"
+                    disabled>
+                    Parar
+                </button>
+
+            </div>
+
+
+            <!-- SUBIR IMAGEN -->
+            <div class="upload">
+
+                <label for="imagen">
+                    Selecciona una imagen
+                </label>
+
+                <input
+                    type="file"
+                    id="imagen"
+                    accept="image/*">
+
+            </div>
+
+
+            <!-- VISTA PREVIA -->
+            <div class="preview">
+
+                <h3>Imagen seleccionada</h3>
+
+                <img
+                    id="previewImagen"
+                    src=""
+                    alt="Vista previa de la imagen">
+
+            </div>
+
+
+            <!-- RESULTADO -->
+            <div class="resultado">
+
+                <h3>Resultado</h3>
+
+                <div id="resultadoTexto">
+                    Todavía no se ha realizado ninguna clasificación.
+                </div>
+
+                <div id="porcentaje">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MENSAJE -->
+        <section class="card">
+
+            <h2>Mensaje</h2>
+
+            <p id="mensaje">
+                Pulsa Iniciar para comenzar.
+            </p>
+
+        </section>
+
+
+        <!-- HISTORIAL -->
+        <section class="card">
+
+            <div class="historial-header">
+
+                <h2>Historial de resultados</h2>
+
+                <button
+                    id="btnLimpiar"
+                    type="button">
+                    Limpiar historial
+                </button>
+
+            </div>
+
+
+            <div id="historial">
+
+                <p>
+                    No hay resultados todavía.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+
+        <p>
+            Proyecto realizado con Teachable Machine y TensorFlow.js
+        </p>
+
+    </footer>
+
+
+    <!-- TensorFlow.js -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js">
+    </script>
+
+
+    <!-- Librería de Teachable Machine -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js">
+    </script>
+
+
+    <!-- Nuestro JavaScript -->
+    <script src="app.js"></script>
+
+</body>
+
+</html>
